@@ -1,6 +1,4 @@
-// deno-lint-ignore-file
-import { serve } from "https://deno.land/std/http/server.ts";
-
+import { serve } from "https://deno.land/std@0.151.0/http/server.ts";
 const HTML = await Deno.readFile("./public/index.html");
 const CSS = await Deno.readFile("./public/styles.css");
 const JS = await Deno.readFile("./public/index.js");
@@ -21,10 +19,9 @@ serve(async () => {
 });
 
 serve(async () => {
-    return new Response(JS, {
-        headers: new Headers({
-        "content-type": "text/javascript",
-        }),
-    });
-    }
+  return new Response(JS, {
+    headers: new Headers({
+      "content-type": "text/javascript",
+    }),
+  });
 });
