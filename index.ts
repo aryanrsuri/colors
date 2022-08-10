@@ -1,5 +1,12 @@
-import { Application } from "https://deno.land/x/abc@v1.3.3/mod.ts";
+// deno-lint-ignore-file
+import { serve } from "https://deno.land/std/http/server.ts";
 
-const app = new Application();
+const HTML = await Deno.readFile("./public/index.html");
 
-app.static("/", "./public").start({ port: 8000 });
+serve(async () => {
+  return new Response(HTML, {
+    headers: new Headers({
+      "content-type": "text/html",
+    }),
+  });
+});
