@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <title>Dart Colors</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo_title">
+        <div class="logo" id="logo"></div>
+        <div class="title">Dart</div>
+      </div>
+      <!-- <div class="header_button">
+        <div onclick="dark()" class="dark_mode">&#x263D;</div>
+      </div> -->
+    </header>
+    <main class="main">
+      <div class="content">
+        <h2>Add a color to see it in action</h2>
+        <p>
+          Dart colors make use of the color api to complete the conversions,
+          currently working on building an in house api to ensure only client
+          side conversion is done.
+        </p>
+        <div class="enter">
+          <span class="rgb">RGB</span>
+          <input class="color_value" type="text" id="rgb" />
+        </div>
+        <div class="enter">
+          <span class="hex">HEX</span>
+          <input class="color_value" type="text" id="hex" />
+        </div>
+        <div class="enter">
+          <span class="hsl">HSL</span>
+          <input class="color_value" type="text" id="hsl" />
+        </div>
+
+        <div id="splash" class="splash"></div>
+      </div>
+    </main>
+
+    <script src="./index.js" defer></script>
+  </body>
+</html>
