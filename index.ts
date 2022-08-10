@@ -1,27 +1,12 @@
-import { serve } from "https://deno.land/std@0.151.0/http/server.ts";
-const HTML = await Deno.readFile("./public/index.html");
-const CSS = await Deno.readFile("./public/styles.css");
-const JS = await Deno.readFile("./public/index.js");
-serve(async () => {
-  return new Response(HTML, {
-    headers: new Headers({
-      "content-type": "text/html",
-    }),
-  });
-});
+import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
+import { serveDir } from "https://deno.land/std@0.140.0/http/file_server.ts";
 
-serve(async () => {
-  return new Response(CSS, {
-    headers: new Headers({
-      "content-type": "text/css",
-    }),
-  });
-});
+serve((req) => {
+  const pathname = new URL(req.url).pathname;
+  console.log(pathname);
 
-serve(async () => {
-  return new Response(JS, {
-    headers: new Headers({
-      "content-type": "text/javascript",
-    }),
-  });
+  if (pathname.startsWith("/")) {
+    return serveDir(req, { fsRoot: "./public/" });
+  }
+  return new Response();
 });
