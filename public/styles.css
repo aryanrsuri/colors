@@ -12,6 +12,8 @@
   --very-light-gray: #bbb;
   --purple: #705dcb;
   --teal: #4ca2bd;
+  --green: #065f46;
+  --burnt-orange: #92400e;
   --faded-yellow: #fdf9d3;
   --faded-green: #e4ffee;
   --faded-purple: #eff2ff;
@@ -31,7 +33,6 @@ html {
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color;
   line-height: 1.5;
   color: var(--black);
-  transition: all 500ms ease !important;
 }
 
 .header {
@@ -77,13 +78,25 @@ html {
   flex-direction: column;
   justify-content: center;
   margin-top: 5rem;
-  max-width: 450px;
-  text-align: justify;
+  max-width: 500px;
+  text-align: left;
 }
 
 .main .content h2 {
   font-size: 2rem;
   color: var(--editor-bg-dark);
+  margin-bottom: 1rem;
+}
+.content p {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.content a {
+  color: var(--burnt-orange);
+  text-decoration: none;
 }
 
 .main .content .enter {
@@ -112,7 +125,7 @@ html {
 
 .main .content .splash {
   margin-top: 4rem;
-  width: 450px;
-  height: 450px;
+  width: 500px;
+  height: 500px;
   background-color: #fff;
 }
